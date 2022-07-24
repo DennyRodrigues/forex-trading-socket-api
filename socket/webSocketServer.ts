@@ -38,7 +38,6 @@ export const startWebScocketServer = (server: any) => {
     tradeSocket.on("open", (event:any) => {
       tradeSocket.send(JSON.stringify(subscribe));
     });
-    3001;
 
     // Listen for messages and emit it using the backedSocket
     tradeSocket.on("message", (data: any) => {
