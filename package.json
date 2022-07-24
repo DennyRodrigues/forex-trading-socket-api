@@ -1,0 +1,29 @@
+{
+  "name": "forex-trading-websocket",
+  "version": "1.0.0",
+  "description": "Websocket to use on the forex-trading-application",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.ts",
+    "start": "node build/server.js",
+    "build": "tsc"
+  },
+  "author": "Denny Rodrigues do Carmo",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http": "0.0.1-security",
+    "socket.io": "^4.5.1",
+    "typescript": "^4.7.4",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.6.0",
+    "@types/ws": "^8.5.3",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1"
+  }
+}
