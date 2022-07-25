@@ -1,5 +1,8 @@
 export const parseData = (data: Object) => {
-  const response = JSON.parse(data.toString()); // Shows the original stringified version
-  // JSON.parse not working, Get mid value using string split
-  return Number(response.price);
+  const response = JSON.parse(data.toString())
+  const parsedResponde = {
+    symbol: response.symbol,
+    value: Number(response.price),
+  };
+  return parsedResponde;
 }

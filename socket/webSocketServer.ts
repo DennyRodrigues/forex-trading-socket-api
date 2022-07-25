@@ -31,7 +31,7 @@ export const startWebScocketServer = (server: any) => {
     const subscribe = {
       action: "subscribe",
       params: {
-        symbols: "USD/JPY",
+        symbols: "EUR/USD,USD/JPY,BTC/USD",
       },
     };
     // Connection opened
