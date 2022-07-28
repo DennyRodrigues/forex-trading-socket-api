@@ -41,7 +41,6 @@ export const startWebScocketServer = (server: any) => {
 
     // Listen for messages and emit it using the backedSocket
     tradeSocket.on("message", (data: any) => {
-      console.info(parseData(data));
       backendSocket.emit("message", parseData(data));
     });
   };
