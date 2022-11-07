@@ -3,9 +3,10 @@ import { parseData } from '../helpers/parseExternalDate'
 import { Server } from 'socket.io'
 import type { Server as HttpServer } from 'http'
 
-export const startWebScocketServer = (server: HttpServer) => {
-  const port = process.env.PORT
+const port = process.env.PORT
+const connection_string = `wss://ws.twelvedata.com/v1/quotes/price?apikey=${process.env.API_KEY}`
 
+export const startWebScocketServer = (server: HttpServer) => {
   //Start the backend server socket
   const backendSocket = new Server(server, {
     cors: {
@@ -23,9 +24,8 @@ export const startWebScocketServer = (server: HttpServer) => {
 
   // Start external API socket
   const connectExternalAPI = () => {
-    const tradeSocket = new ws(
-      `wss://ws.twelvedata.com/v1/quotes/price?apikey=${process.env.API_KEY}`
-    )
+    console.log('connection string:', connection_string)
+    const tradeSocket = new ws(connection_string)
 
     // Subscribe message to start getting values
     const subscribe = {
@@ -41,6 +41,7 @@ export const startWebScocketServer = (server: HttpServer) => {
 
     // Listen for messages and emit it using the backedSocket
     tradeSocket.on('message', (data: any) => {
+      console.log(data)
       backendSocket.emit('message', parseData(data))
     })
   }
