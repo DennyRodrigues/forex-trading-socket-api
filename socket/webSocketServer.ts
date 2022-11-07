@@ -3,7 +3,7 @@ import { parseData } from '../helpers/parseExternalDate'
 import { Server } from 'socket.io'
 import type { Server as HttpServer } from 'http'
 
-const port = process.env.PORT
+const port = process.env.PORT || 5000
 const connection_string = `wss://ws.twelvedata.com/v1/quotes/price?apikey=${process.env.API_KEY}`
 
 export const startWebScocketServer = (server: HttpServer) => {
