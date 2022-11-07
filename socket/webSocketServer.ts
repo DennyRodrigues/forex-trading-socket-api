@@ -17,6 +17,10 @@ export const startWebScocketServer = (server: HttpServer) => {
     console.log('Websocket Server is up & running', port)
   })
 
+  backendSocket.on('connection', () => {
+    console.log('User connected')
+  })
+
   // Start external API socket
   const connectExternalAPI = () => {
     const tradeSocket = new ws(
