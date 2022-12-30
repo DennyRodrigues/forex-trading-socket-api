@@ -9,6 +9,12 @@
     "build": "tsc"
   },
   "author": "Denny Rodrigues do Carmo",
+  "contributors": [
+    {
+      "name": "Dario Rodrigues do Carmo",
+      "email": "dario.rodri123@gmail.com"
+    }
+  ],
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
